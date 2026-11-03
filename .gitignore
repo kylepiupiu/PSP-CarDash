@@ -1,0 +1,8 @@
+.DS_Store
+*.o
+*.elf
+*.prx
+PARAM.SFO
+EBOOT.PBP
+psp_car_dash
+build/
