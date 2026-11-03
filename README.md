@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-<p align="center"><img src="assets/icon.png" width="180" alt="PSP CarDash icon"></p>
+<p align="center"><img src="assets/icon.jpg" width="180" alt="PSP CarDash icon"></p>
 
 Turn a Sony PSP into a real-time vehicle dashboard using an ESP32 as the telemetry bridge.
 

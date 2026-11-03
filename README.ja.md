@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-<p align="center"><img src="assets/icon.png" width="180" alt="PSP CarDash アイコン"></p>
+<p align="center"><img src="assets/icon.jpg" width="180" alt="PSP CarDash アイコン"></p>
 
 Sony PSP を ESP32 と組み合わせ、リアルタイム車載ダッシュボードとして再利用するオープンソースプロジェクトです。
 

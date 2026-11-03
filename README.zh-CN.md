@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-<p align="center"><img src="assets/icon.png" width="180" alt="PSP CarDash 图标"></p>
+<p align="center"><img src="assets/icon.jpg" width="180" alt="PSP CarDash 图标"></p>
 
 把 Sony PSP 改造成一个实时车载仪表显示终端，并通过 ESP32 作为遥测数据桥。
 
