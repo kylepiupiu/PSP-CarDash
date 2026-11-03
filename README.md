@@ -1,5 +1,9 @@
 # PSP CarDash
 
+[English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
+
+<p align="center"><img src="assets/icon.png" width="180" alt="PSP CarDash icon"></p>
+
 Turn a Sony PSP into a real-time vehicle dashboard using an ESP32 as the telemetry bridge.
 
 > **Stable baseline: v0.3 ESP32 Link**
@@ -67,6 +71,7 @@ PSP-CarDash/
 ├── esp32/          ESP32-S3 telemetry bridge
 ├── tools/          Desktop UDP simulator
 ├── docs/           Protocol, hardware notes and roadmap
+├── assets/         Project artwork
 └── experimental/   Work-in-progress UI experiments
 ~~~
 
@@ -206,14 +211,6 @@ Future vehicle support should start as read-only telemetry. Verify connector pin
 
 Issues, real-hardware test reports, protocol adapters and UI improvements are welcome.
 
-When reporting a test, please include:
-
-- PSP model and firmware/CFW
-- ESP32 board
-- build environment
-- vehicle/model year if applicable
-- exact symptom and logs
-
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
@@ -222,4 +219,4 @@ Code is released under the MIT License. See [LICENSE](LICENSE).
 
 ## Trademark notice
 
-This is an independent, unofficial hobby project. Mercedes-Benz, W210 and related names/logos are trademarks of their respective owners. No affiliation or endorsement is implied.
+This is an independent, unofficial hobby project. Sony, PlayStation Portable / PSP, Mercedes-Benz, W210 and related names/logos are trademarks of their respective owners. No affiliation or endorsement is implied.
