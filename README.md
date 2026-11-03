@@ -12,7 +12,7 @@ Turn a Sony PSP into a real-time vehicle dashboard using an ESP32 as the telemet
 
 Old PSP hardware has a good screen, physical controls and enough networking capability to become a surprisingly useful dedicated vehicle display. PSP CarDash keeps the PSP side lightweight and uses an ESP32-S3 as the bridge between modern sensors/vehicle interfaces and the PSP.
 
-\`\`\`text
+~~~text
 Vehicle / OBD (future)
         │
      ESP32-S3
@@ -22,7 +22,7 @@ Vehicle / OBD (future)
      UDP 4210
         │
        PSP
-\`\`\`
+~~~
 
 ## Current stable features
 
@@ -53,22 +53,22 @@ The v0.3 baseline has been tested on real PSP hardware and supports:
 
 The PSP Wi-Fi stack is old. For maximum compatibility, the reference ESP32 firmware creates an **open 2.4 GHz access point**:
 
-\`\`\`text
+~~~text
 SSID: PSP-CAR-DASH
 AP IP: 192.168.4.1
 UDP: 4210
-\`\`\`
+~~~
 
 ## Repository layout
 
-\`\`\`text
+~~~text
 PSP-CarDash/
 ├── psp/            PSP homebrew source and Makefile
 ├── esp32/          ESP32-S3 telemetry bridge
 ├── tools/          Desktop UDP simulator
 ├── docs/           Protocol, hardware notes and roadmap
 └── experimental/   Work-in-progress UI experiments
-\`\`\`
+~~~
 
 ## PSP controls
 
@@ -86,53 +86,41 @@ PSP-CarDash/
 
 ### 1. Build the PSP application
 
-Install [PSPDEV](https://pspdev.github.io/) and make sure \`psp-gcc\` is available.
+Install [PSPDEV](https://pspdev.github.io/) and make sure `psp-gcc` is available.
 
-\`\`\`bash
+~~~bash
 export PSPDEV=/opt/pspdev
 export PATH="$PSPDEV/bin:$PATH"
 
 cd psp
 make clean
 make
-\`\`\`
+~~~
 
-Copy:
+Copy `psp/EBOOT.PBP` to:
 
-\`\`\`text
-psp/EBOOT.PBP
-\`\`\`
-
-to:
-
-\`\`\`text
+~~~text
 /PSP/GAME/PSPCARDASH/EBOOT.PBP
-\`\`\`
+~~~
 
 ### 2. Flash the ESP32
 
-Open:
-
-\`\`\`text
-esp32/PSP_CAR_DASH_ESP32_LINK.ino
-\`\`\`
-
-with Arduino IDE / Arduino CLI and flash it to the ESP32-S3.
+Open `esp32/PSP_CAR_DASH_ESP32_LINK.ino` with Arduino IDE / Arduino CLI and flash it to the ESP32-S3.
 
 The ESP32 creates:
 
-\`\`\`text
+~~~text
 SSID: PSP-CAR-DASH
 Security: OPEN
 UDP: 4210
 Rate: 10 Hz
-\`\`\`
+~~~
 
 ### 3. Create the PSP Wi-Fi profile
 
 On the PSP XMB:
 
-\`\`\`text
+~~~text
 Settings
  -> Network Settings
  -> Infrastructure Mode
@@ -141,32 +129,32 @@ Settings
  -> PSP-CAR-DASH
  -> Security: None
  -> Save
-\`\`\`
+~~~
 
 Launch PSP CarDash, select the saved Wi-Fi profile using L/R, then press **Triangle**.
 
 A working link should show on the Diagnostics page:
 
-\`\`\`text
+~~~text
 AP STATE   4 / 4
 PSP IP     192.168.4.x
 UDP PORT   4210
 PACKETS    increasing
-\`\`\`
+~~~
 
 ## Telemetry protocol
 
 v0.3 uses a deliberately simple ASCII packet:
 
-\`\`\`text
+~~~text
 PCD1,seq,speed,rpm,coolant,throttle,voltage10,intake,load,fuel10,oiltemp,oilpress10
-\`\`\`
+~~~
 
 Example:
 
-\`\`\`text
+~~~text
 PCD1,145,86,3250,92,27,142,31,38,68,96,38
-\`\`\`
+~~~
 
 See [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
@@ -174,9 +162,9 @@ See [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
 You can test the PSP receiver without ESP32 hardware:
 
-\`\`\`bash
+~~~bash
 python3 tools/pcd_sender.py
-\`\`\`
+~~~
 
 ## Project status
 
